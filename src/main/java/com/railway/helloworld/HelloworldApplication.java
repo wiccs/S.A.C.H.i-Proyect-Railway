@@ -1,21 +1,23 @@
-package com.railwayguide.helloworld;
+package com.railway.helloworld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+@Controller
 public class HelloworldApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HelloworldApplication.class, args);
+	@GetMapping("/")  // Mapeamos la ruta raíz
+	public String index() {
+		return "index";  // Thymeleaf buscará la plantilla 'index.html'
 	}
 
-	@GetMapping("/")
-    public String hello() {
-      return String.format("Hella world from Java Spring Boot!");
-    }
+	@GetMapping("/registro")
+	public String registrar() {
+		return "RegisterUser";
+	}
 
 }
