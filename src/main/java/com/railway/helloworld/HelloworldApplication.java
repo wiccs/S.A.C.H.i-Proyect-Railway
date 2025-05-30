@@ -7,17 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@Controller
 public class HelloworldApplication {
 
-	@GetMapping("/")  // Mapeamos la ruta raíz
-	public String index() {
-		return "index";  // Thymeleaf buscará la plantilla 'index.html'
+	public static void main(String[] args) {
+		SpringApplication.run(HelloworldApplication.class, args);
 	}
 
-	@GetMapping("/registro")
-	public String registrar() {
-		return "RegisterUser";
-	}
 
 }
